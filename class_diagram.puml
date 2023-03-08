@@ -1,0 +1,44 @@
+@startuml
+class Usuario{
+  String id
+  String nome
+  String senha
+  String cpf
+  String telefone
+  String email
+  String inss
+  String plano_de_saude
+  String medicamentos
+  String contato_emergencia
+  Bool administrador
+  List get_contatos_profissionais()
+  Endereco get_endereco()
+  List get_perfil()
+}
+
+
+class Endereco{
+  String cep
+  String nome
+  String rua
+  String numero_casa
+  String complemento
+  String bairro
+  String cidade
+  String estado
+
+  void set_endereco()
+  void return_endereco()
+}
+
+class ContatosProfissionais{
+  String telefone
+  String nome
+  String descricao
+
+  void return_contato_profissional()
+}
+
+Usuario *-- Endereco   : 1*1
+Usuario *-- ContatosProfissionais  : n*n
+@enduml
